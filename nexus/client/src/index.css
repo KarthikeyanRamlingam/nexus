@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --bg-void: #060810;
+  --bg-deep: #0b0e18;
+  --bg-surface: #10141f;
+  --bg-elevated: #161b2a;
+  --bg-hover: #1d2338;
+  --border: #1e2438;
+  --border-bright: #2a3252;
+  --accent: #4f8cff;
+  --accent-glow: rgba(79,140,255,0.18);
+  --accent-dim: #2a4d99;
+  --green: #22d37a;
+  --green-glow: rgba(34,211,122,0.15);
+  --red: #ff4f6a;
+  --red-glow: rgba(255,79,106,0.15);
+  --amber: #f5a623;
+  --text-primary: #e8ecf5;
+  --text-secondary: #7a85a3;
+  --text-muted: #3d4560;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --shadow-glow: 0 0 40px rgba(79,140,255,0.08);
+  --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: var(--bg-void); color: var(--text-primary); font-family: var(--font-display); font-size: 14px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+#root { height: 100%; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-bright); border-radius: 99px; }
+.spinner { width: 32px; height: 32px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes pulse-ring { 0% { transform: scale(1); opacity: 0.6; } 100% { transform: scale(1.6); opacity: 0; } }
+.fade-up  { animation: fadeUp  0.4s ease both; }
+.fade-in  { animation: fadeIn  0.3s ease both; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.01em; padding: 9px 18px; border-radius: var(--radius-md); border: none; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; }
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--accent); color: #fff; box-shadow: 0 0 20px rgba(79,140,255,0.3); }
+.btn-primary:hover { background: #6ba3ff; box-shadow: 0 0 30px rgba(79,140,255,0.45); }
+.btn-ghost { background: transparent; color: var(--text-secondary); border: 1px solid var(--border); }
+.btn-ghost:hover { background: var(--bg-hover); color: var(--text-primary); border-color: var(--border-bright); }
+.btn-danger { background: var(--red-glow); color: var(--red); border: 1px solid rgba(255,79,106,0.3); }
+.btn-danger:hover { background: rgba(255,79,106,0.25); }
+.btn-icon { width: 36px; height: 36px; padding: 0; border-radius: var(--radius-md); background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
+.btn-icon:hover { background: var(--bg-hover); color: var(--text-primary); border-color: var(--border-bright); }
+.btn-icon.active { background: var(--accent-glow); color: var(--accent); border-color: rgba(79,140,255,0.4); }
+.btn-icon.danger { background: var(--red-glow); color: var(--red); border-color: rgba(255,79,106,0.3); }
+.input { width: 100%; padding: 10px 14px; background: var(--bg-deep); border: 1px solid var(--border); border-radius: var(--radius-md); color: var(--text-primary); font-family: var(--font-display); font-size: 14px; outline: none; transition: border-color 0.15s; }
+.input::placeholder { color: var(--text-muted); }
+.input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-glow); }
+.card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; }
+.tag { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; padding: 3px 8px; border-radius: 99px; font-family: var(--font-mono); }
+.tag-green { background: var(--green-glow); color: var(--green); }
+.tag-red   { background: var(--red-glow); color: var(--red); }
+.tag-blue  { background: var(--accent-glow); color: var(--accent); }
+.tag-amber { background: rgba(245,166,35,0.12); color: var(--amber); }
